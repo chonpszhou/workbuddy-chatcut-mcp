@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="./assets/banner.png" alt="WorkBuddy × ChatCut MCP" width="100%">
+</div>
+
 # 🎬 WorkBuddy × ChatCut MCP
 
 <div align="center">
@@ -116,7 +120,7 @@ python3 open_projects.py
 - 本项目**不含任何 token / refresh_token / client_secret**。
 - 真实凭证只在本地的 `~/.workbuddy/chatcut/credentials.json`（权限 600）与 `~/.workbuddy/mcp.json`（权限 600）。
 - 🤖 **CI 自动兜底**：每次 push / PR 由 GitHub Actions 运行 [Gitleaks](https://github.com/gitleaks/gitleaks) 扫描，疑似密钥误提交即自动失败，挡在合并前（配置见 [`.github/workflows/secret-scan.yml`](./.github/workflows/secret-scan.yml) 与 [`.gitleaks.toml`](./.gitleaks.toml)）。
-- 详见 [SECURITY.md](./SECURITY.md)。
+- 详见 [SECURITY.md（中文）](./SECURITY.md) · [SECURITY_EN.md（English）](./SECURITY_EN.md)。
 
 ## 📁 文件说明
 
