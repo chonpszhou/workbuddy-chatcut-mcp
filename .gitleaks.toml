@@ -1,0 +1,10 @@
+title = "workbuddy-chatcut-mcp gitleaks 配置"
+
+# 说明：本仓库刻意不含任何真实密钥，此配置仅用于排除「模板/示例/文档」中
+# 可能出现的类密钥字符串（如 mcp.json.example 的占位字段、文档里的变量名说明），
+# 避免 CI 误报。真正的 client_id / refresh_token 为运行时动态生成，不存在于代码中。
+
+[allowlist]
+paths = [
+  '''.*\.example$''',
+]
