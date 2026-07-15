@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="./assets/banner.png" alt="WorkBuddy × ChatCut MCP" width="100%">
+</div>
+
 # 🎬 WorkBuddy × ChatCut MCP
 
 <div align="center">
@@ -116,7 +120,7 @@ python3 open_projects.py
 - This project **contains no token / refresh_token / client_secret**.
 - Real credentials live only in your local `~/.workbuddy/chatcut/credentials.json` (mode 600) and `~/.workbuddy/mcp.json` (mode 600).
 - 🤖 **CI safety net**: on every push / PR, GitHub Actions runs [Gitleaks](https://github.com/gitleaks/gitleaks); a suspected leak fails the run and blocks the merge (config in [`.github/workflows/secret-scan.yml`](./.github/workflows/secret-scan.yml) and [`.gitleaks.toml`](./.gitleaks.toml)).
-- See [SECURITY.md](./SECURITY.md) for details.
+- See [SECURITY_EN.md (English)](./SECURITY_EN.md) · [SECURITY.md (中文)](./SECURITY.md) for details.
 
 ## 📁 Files
 
