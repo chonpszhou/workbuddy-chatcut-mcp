@@ -79,6 +79,7 @@ python3 chatcut_refresh.py
 - 本项目**不包含任何 token / refresh_token / client_secret**。
 - 真实凭证只存在于你本地的 `~/.workbuddy/chatcut/credentials.json`（权限 600）与 `~/.workbuddy/mcp.json`（权限 600）。
 - 详见 [SECURITY.md](./SECURITY.md)。
+- 🤖 **CI 自动兜底**：每次 push / PR 会由 GitHub Actions 运行 [Gitleaks](https://github.com/gitleaks/gitleaks) 扫描，一旦检测到疑似密钥误提交即自动失败，把泄露挡在合并前（配置见 [`.github/workflows/secret-scan.yml`](./.github/workflows/secret-scan.yml) 与 [`.gitleaks.toml`](./.gitleaks.toml)）。
 
 ## 🖥️ 在 WorkBuddy 内置浏览器打开编辑器
 
