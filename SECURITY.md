@@ -22,6 +22,7 @@
 1. 重新运行 `chatcut_auth.py` 会**重新动态注册**一个新的 `client_id`，使旧的 `client_id` / `refresh_token` 失效。
 2. 如 ChatCut 提供「已授权应用 / 会话」管理页，主动吊销旧授权。
 3. 立即检查 `~/.workbuddy/chatcut/credentials.json` 与 `~/.workbuddy/mcp.json` 是否已被同步到 iCloud / 备份盘，必要时清理。
+4. 若密钥**已推送到 GitHub**：公开仓库历史不可变，须视为已泄露——先执行 1~3 步吊销，再用 `git filter-repo` 或 BFG 改写历史并强制推送；注意改写无法撤销已被第三方爬取的副本，吊销才是根本手段。
 
 ## 公共客户端原理
 
@@ -30,7 +31,8 @@ ChatCut 采用 OAuth 2.0 **公共客户端**（`token_endpoint_auth_method: none
 ## 提交前 checklist
 
 - [ ] `git status` 中**没有** `credentials.json`、真实 `mcp.json`
-- [ ] 在仓库内 `grep -RniE "Bearer |refresh_token|client_secret" .` **搜不到**真实值
+- [ ] 在仓库内 `git grep -niE "Bearer |refresh_token|client_secret|access_token"` **搜不到**真实值（脚本与文档里的说明文字除外）
+- [ ] `git ls-files` 仅含预期文件：README.md / .gitignore / SECURITY.md / LICENSE / mcp.json.example / chatcut_auth.py / chatcut_refresh.py / SKILL.md
 - [ ] 本地凭证文件权限为 `600`：
       `chmod 600 ~/.workbuddy/chatcut/credentials.json ~/.workbuddy/mcp.json`
 - [ ] 确认提交的是 `mcp.json.example` 而非真实 `mcp.json`
