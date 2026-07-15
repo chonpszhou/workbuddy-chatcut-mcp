@@ -1,29 +1,28 @@
-# ===== 密钥与凭证（切勿提交） =====
+# 密钥与凭证（切勿提交）
 credentials.json
 *.credentials.json
 mcp.json
 mcp.json.local
+*.env
+*.env.*
 *.token
+secrets/
 
-# ===== Python =====
+# 确保模板始终被跟踪（即使上面忽略了 mcp.json）
+!mcp.json.example
+
+# Python
 __pycache__/
 *.py[cod]
-*$py.class
 *.egg-info/
 .pytest_cache/
-.mypy_cache/
 .venv/
 venv/
 
-# ===== 系统 / IDE =====
+# 系统 / IDE
 .DS_Store
 Thumbs.db
 .idea/
 .vscode/
 *.swp
-*.swo
 *.log
-
-# ===== 本地环境 =====
-.env
-.env.local
